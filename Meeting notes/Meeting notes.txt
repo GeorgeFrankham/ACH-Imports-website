@@ -1,0 +1,125 @@
+Meeting notes:
+
+Maintain the initial feel and exisiting systems without implement excessive automation
+
+Take key information from emails from growers and take that information and use it to populate a system from there linking the master and the consignments
+
+
+WHAT I FOUND:
+
+Guy reckons that there are redundancy issues between the consignments sheets and the FINANCE PO sheets
+Mentions quickbooks isn't connectable due to the lack of a centrallised dataset
+
+Large number of documents per consignment: Majority machine readable, QCRs and certificates not machine readable
+Inconsistent layouts with readable ones, mainly invoices, bills etc
+
+Mentions that everything bar the judgement inputs which are exchange rate, overhead rate, accruals and GRR can be read from other docs
+
+Person mentions that because the sheets are not balanced there is a risk of drift from original figures
+Cannot automatically concile as consignment isn't a quickbook dimension
+
+Mentions the risk of foreign currency invoices being unconverted, a credit not applied or missed invoice
+
+
+Lack of record:
+book section agreed by email only visible in invoice, excel notes and screenshots
+Rejections cannot be easily traced back to a container from workbooks
+
+
+
+
+Mentions that at the minute the system works due to the lack of size, but expansion could sprint issues
+Proposes a single location where consignment facts live straight from received documents and checked weekly against the ledger
+
+ACTUAL PROPOSAL
+
+Use of SharePoint lists, as mentions that switching to a full database is overkill
+Use of excel red as tables with power automate running automation
+
+Potential input of an advanced dashboard
+
+Use of Microsoft document intelligence to read the machine unreadable texts
+
+
+PHASE1
+Documents arriving at one address - REASONABLE AND COMPETENT IDEA
+Reading directly from the email to autopopulate consignments - QUERY HOW THIS IS DONE, LIKELY THROUGH AN IMPLEMENTED AI API BUT COULD BE SOMETHING ELSE
+Add any uncertainties to a human read queue for redundancy sake - REASONABLE
+
+Create a master consignment record consolidated to remove the risk of drift, with simple searching abilities - MAKES SENSE, QUERY HOW LINKING AND LIST IS USED
+
+Final point, query the whole concept, is it not worth grouping into the consignment sheet with a branch off
+
+
+PHASE2
+REST - Representational state transfer
+
+
+OVERVIEW
+Using lists, which is where each acts as a lightweight database and I assume each list is separated for a consignment or a global overarching list
+
+It is worth noting that due to the variety of information being parsed how will the Microsoft document intelligence work, is it a centrallised brain or is there one overarching model which will detect the document type
+and then appropriately parse that down into file specific document to extract from there, and then move into a human read one if not applicable
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+KEY QUESTIONS
+Inquire about full breakdown of cost
+
+How portable is the system, so if you were to leave, how easy is it for the client to maintain and modify the systems -  so can we modify flows without involvement (inquire about support plan)
+
+Would there be any risk of exposition of sensitive consignment data through power automate connectors
+
+You mentioned the concept of a transition to a dataverse based system if the company outgrows the current system, how complex would this actual transition be and to what extent can the proposed system handle growth
+
+Again you mentioned the user based queue for reading unscanned documents, if there are mismatched consignments is there any way these can be automatically flagged and corrected
+
+In the proposal, you mentioned quickbooks integration, how will the upload automation work - assuming its api based but how
+
+Microsoft can be in cases unreliable, if azure goes down how will the system handle this mid season?
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OTHER IDEAS:  --- PROBABABLY REDUNDANT BUT KEPT IN FOR REDUDNANCY SAKE
+
+Have power automate monitoring the mailbox and automatically extract the attachments, as stated in the proposal, and then drop them into a shared upload folder on sharepoint
+This then triggers a second flow to extract the key info
+
+We can cut down on the AI training costs and time if we instead just use it on the structured documents, and have manual input on the unstructured documents
+This would therefore reduce the risk of machine error and significantly cut down on the AI training time, I reckon by about 70-80%
+
+This does however mean that staff would need to manually input the unstructured fields but data here is limited
+
+Reduce the entire AI pipeline and make it semi auto. Here, when the emails come in, the user extracts the attachment and places it into a common 
+
+If possible, set up a system which is localised which can be used for information inputting, thus avoiding the email system altogether. This would deal with the lack of formatting issue, and while it could be a pain regarding the email system
+given emailing is a little 2000s, it may be more beneficial and easier to use in the long run. Therefore setting up a structured proprietary system may be more cost effective and efficient compared to the proposed system
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PHASE 1 NOTES FOR OVERALL:
+
+First point: Agree with what I assume is power automate constantly monitoring the emails, and I assume then uploading them to a SharePoint folder. However, might be simpler to instead of analysing all unstructured data with DI
+instead, look at the structured data with DI and then have the unstructured data extracted using human force. This cuts down on AI training time by I reckon around 70-80% and reduces cost as well as the risk of error here.
+However it is worth considering that this will add a degree of human intervention (Which Rob may/may not want) - This also eliminates the additional need for the unknown queue functionality
+
+Second point: No problems with this at all, might be worth querying how he plans on doing this inside the Microsoft lists, as in is this all stored on a single list(I assume it is) or what else - Easy search ability is obviously a must 
+
+Third point: Raised a point but not necessarily given a detailed solution, just inquire how he plans on doing this and ensures that this is followed, as well as this where this is being stored
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PHASE 2 NOTES FOR OVERALL:
+
+First Point: I assume here he is creating a dashboard comparing planned to real, allowing to compare shortfalls and surpluses in real time. Includes the key performance indicators. I understand the majority of the cost here is ensuring
+there is a supply of clean data to ensure this is populated but maybe inquire the cost here, 5 grand seems excessive for including a data cleaning process and outputting performance stats
+For the cost, the process - Which is essentially riding off of the list of phase 1, applying some wrangling and engineering, and calculating some basic analytics from the engineered data - would not be that expensive (unless advanced
+diagnostics such as PCA and clustering were involved for pattern recognition, even then its not that much money, I did a Uni coursework on all premier league stats and outputs for a 1 month coursework in UNI for free!)
+
+Second point: Encompasses the PCA (Principle component analysis) and clustering previously described. This is where we can identify any of the underlying dimensions to explain variance and diagnose patterns once the data is scaled
+
+This does not in my opinion warrant the price tag - this is aggregation and segmentation - In technical terms we follow the data processing -> Feature engineering -> Scaling -> PCA -> Clustering -> Visualisation pipeline
+

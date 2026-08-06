@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | ACH Imports</title>
+
+<!-- ============================================================
+  ACH IMPORTS — long-text child page template
+  Duplicate this file for each of: Cookies, Privacy, Terms of use,
+  Terms and conditions of sale, Modern Slavery Statement.
+
+  ASSUMPTIONS BAKED INTO THE PATHS BELOW — check these first:
+  - This file lives in a /Legal/ subfolder, one level below the
+    homepage (matching Legal/Cookies.html etc. in your footer).
+  - The homepage file is named index.html. If it's named
+    something else, update every "../index.html" below.
+  - Images/ sits at the site root, so image paths here use "../Images/".
+============================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* Same design tokens as the homepage — keep these two files in sync
+     if the brand colours/fonts ever change. */
+  :root{
+    --color-purple:        #7A2A8E;
+    --color-purple-dark:   #551D63;
+    --color-olive:         #75825A;
+    --color-olive-dark:    #5C6647;
+    --color-bg:            #FCFCFA;
+    --color-ink:           #241726;
+    --color-ink-soft:      #5B4E5C;
+    --color-line:          rgba(36,23,38,0.12);
+    --color-cream-card:    #F5F3EE;
+    --shadow-soft:          0 20px 50px rgba(36,23,38,0.16);
+    --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --max-width: 1240px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    position: relative;
+  }
+  body::before{
+    content:"";
+    position: fixed;
+    inset:0;
+    z-index: 500;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  img{ max-width: 100%; display:block; }
+  a{ color: inherit; text-decoration:none; }
+  ul, ol{ margin:0; padding:0; }
+
+  h1,h2,h3{
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin: 0;
+    color: var(--color-ink);
+  }
+
+  /* --- simple static header: no hero, no scroll-driven animation needed.
+         Logo doubles as the way back home, per the brief. --- */
+  .site-header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(252,252,250,0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 0 var(--color-line);
+  }
+  .nav-bar{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .nav-logo-link{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .nav-logo-link img{ height: 40px; width: auto; }
+  .back-home{
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color .2s ease;
+  }
+  .back-home:hover{ color: var(--color-purple); }
+  .back-home svg{ width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+  /* --- long-text content area --- */
+  .legal-page{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 72px 32px 120px;
+  }
+  .legal-page .eyebrow{
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-olive-dark);
+  }
+  .legal-page h1{
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    margin-top: 10px;
+  }
+  .legal-page .updated{
+    margin-top: 14px;
+    font-size: 0.85rem;
+    color: var(--color-ink-soft);
+  }
+  .legal-page .intro{
+    margin-top: 28px;
+    font-size: 1.05rem;
+    color: var(--color-ink-soft);
+    max-width: 620px;
+  }
+
+  .legal-body{
+    margin-top: 48px;
+  }
+  .legal-body section + section{
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--color-line);
+  }
+  .legal-body h2{
+    font-size: 1.6rem;
+    color: var(--color-purple);
+    margin-bottom: 14px;
+  }
+  .legal-body h3{
+    font-size: 1.15rem;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--color-ink);
+    margin: 20px 0 8px;
+  }
+  .legal-body p{
+    margin: 0 0 14px;
+  }
+  .legal-body ul, .legal-body ol{
+    margin: 0 0 14px;
+    padding-left: 22px;
+  }
+  .legal-body ul{ list-style: disc; }
+  .legal-body ol{ list-style: decimal; }
+  .legal-body li{ margin-bottom: 8px; }
+  .legal-body a{
+    color: var(--color-purple);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .legal-body a:hover{ color: var(--color-olive-dark); }
+
+  /* Optional in-page contents list — handy once a page has several
+     numbered sections. Remove this block if the page is short. */
+  .legal-toc{
+    margin-top: 40px;
+    background: var(--color-cream-card);
+    border: 1px solid var(--color-line);
+    border-radius: 10px;
+    padding: 24px 28px;
+  }
+  .legal-toc p{
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+    margin: 0 0 12px;
+  }
+  .legal-toc ol{
+    list-style: decimal;
+    padding-left: 20px;
+    margin: 0;
+  }
+  .legal-toc li{ margin-bottom: 6px; }
+  .legal-toc a{ color: var(--color-ink); text-decoration: none; }
+  .legal-toc a:hover{ color: var(--color-purple); }
+
+  /* --- footer: identical to the homepage, with paths adjusted for
+         living one folder down --- */
+
+    .footer-col ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+    .site-footer{
+    background: var(--color-purple-dark);
+    color: rgba(255,255,255,0.9);
+    padding: 72px 32px 32px;
+  }
+  .footer-inner{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display:grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  .footer-brand img{ height: 40px; margin-bottom: 14px; }
+  .footer-brand p{ color: rgba(255,255,255,0.72); font-size: 0.9rem; max-width: 280px; }
+  .footer-col h4{
+    list-style: none;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+  }
+  .footer-col ul li{ margin-bottom: 10px; }
+  .footer-col a{ font-size: 0.92rem; color: rgba(255,255,255,0.92); }
+  .footer-col a:hover{ color: var(--color-olive); }
+  .footer-bottom{
+    max-width: var(--max-width);
+    margin: 56px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap: 12px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+  }
+
+  @media (max-width: 900px){
+    .footer-inner{ grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px){
+    .footer-inner{ grid-template-columns: 1fr; }
+    .legal-page{ padding: 48px 20px 80px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =================== HEADER — logo click returns home =================== -->
+<header class="site-header">
+  <nav class="nav-bar">
+    <a class="nav-logo-link" href="../Website_logic.html" aria-label="ACH Imports — back to home">
+      <img src="../Images/ACHI_logo.png" alt="ACH Imports logo">
+    </a>
+    <a class="back-home" href="../Website_logic.html">
+      <svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+      Back to Home
+    </a>
+  </nav>
+</header>
+
+<!-- =================== PAGE CONTENT =================== -->
+<main class="legal-page">
+  <p class="eyebrow">Legal</p>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: 05/08/2026</p>
+  <p class="intro">ACH Imports Ltd is committed to guarding and maintaining the privacy of any personal or potentially sensitive data in alignment with EU GDPR 
+    (General Data protection Regulation) of 2018 and the UK Data Protection Act 1998. We operate a website that provides details about our products, services, and sourcing operations.</p>
+
+  <!-- Optional — delete this block for shorter pages like Cookies -->
+  <nav class="legal-toc" aria-label="Contents">
+    <p>On this page</p>
+    <ol>
+      <li><a href="#section-1">Collected data</a></li>
+      <li><a href="#section-2">How we use your data</a></li>
+      <li><a href="#section-3">Legal basis for data processing</a></li>
+      <li><a href="#section-4">How your data is stored</a></li>
+      <li><a href="#section-5">Sharing your data</a></li>
+      <li><a href="#section-6">Data retention</a></li>
+      <li><a href="#section-7">Your rights under GDPR</a></li>
+      <li><a href="#section-8">Cookies information</a></li>
+    </ol>
+  </nav>
+
+  <div class="legal-body">
+    <section id="section-1">
+      <h2>1. Collected data</h2>
+      <p>There are two key ways we collect personal data:</p>
+      <h3>A.	Information you submit via our contact form</h3>
+      <p>This involves the ‘Get in Touch’ section of our page. This data is only collected upon entering details and pressing submit and we collect:</p>
+      <ul>
+        <li>Your Name</li>
+        <li>Your email address</li>
+        <li>The message or enquiry that you made</li>
+      </ul>
+      <p>This data is then processed securely via Splitforms, our third-party form submission provider.</p>
+      <h3>B.	Analytics data – Non-personal</h3>
+      <p>We may use website analytics tools (such as Microsoft clarity) to collect anonymous usage data, including but not limited to:</p>
+      <ul>
+        <li>Pages visited</li>
+        <li>Time spent on the site</li>
+        <li>Device type</li>
+        <li>Browser type</li>
+        <li>General geographic region (non-precise)</li>
+      </ul>
+      <p>Note that this does not include your name, email address or any other personal information that is uniquely identifiable.</p>
+    </section>
+
+    <section id="section-2">
+      <h2>2. How we use your data</h2>
+      <h3>A.    Contact form submissions</h3>
+      <p>We will use the information you submit to do the following:</p>
+      <ul>
+        <li>Respond to your request or enquery</li>
+        <li>Provide appropriate support</li>
+        <li>Improve our services</li>
+      </ul>
+      <p>We will not use contact form submissions for marketing unless you explicitly provide consent.</p>
+      <h3>B.    Analytical data</h3>
+      <p>Analytical data is vital to help us to:</p>
+      <ul>
+        <li>Understand how visitors use our website</li>
+        <li>Allow us to improve the website performance and tailor content</li>
+        <li>Detect technical issues</li>
+      </ul>
+      <p>Note that this data is aggregated and anonymous, and therefore does not personally identify you.</p>
+    </section>
+
+    <section id="section-3">
+      <h2>3. Legal basis for data processing</h2>
+      <p>Under GDPR, we process your data using the following lawful bases:</p>
+      <ul>
+        <li>Legitimate interest – Responding to enquires submitted through our contact form and operating website analytics in the interest of improving our site</li>
+        <li>Consent – You have the option to opt into marketing communications</li>
+      </ul>
+    </section>
+
+    <section id="section-4">
+      <h2>4. How your data is stored</h2>
+      <h3>A.    Contact form submissions</h3>
+      <p>Your form submission is securely stored and processed by SplitForms. ACH Imports acts as the data controller, and Splitforms acts as our Data processor. SplitForms provides:</p>
+      <ul>
+        <li>Encrypted data storage</li>
+        <li>Spam filtering</li>
+        <li>Secure transmission</li>
+        <li>GDPR-Compliant infrastructure</li>
+        <li>Data deletion tools</li>
+      </ul>
+      <p>Additionally, we retain submission only for as long as it is necessary to respond to your request.</p>
+      <h3>B.    Analytics data</h3>
+      <p>Analytical data collected is stored by the relevant analytics provider (such as Microsoft Clarity) in line with their GDPR-compliant policies.</p>
+    </section>
+
+    <section id="section-5">
+      <h2>5. Sharing your data</h2>
+      <p>We do not share, sell or trade your personal data with any third parties for marketing purposes. 
+    Your data may be shared only with:</p>
+      <ul>
+        <li>SplitForms - Form processing software</li>
+        <li>Analytics providers - Anonymous data usage only</li>
+      </ul>
+      <p>Both act as GDPR compliant data processors.</p>
+    </section>
+
+    <section id="section-6">
+      <h2>6. Data retention</h2>
+      <ul>
+        <li>Contact form submissions: Retained for up to 12 months, unless required longer for any ongoing communication</li>
+        <li>Analytics: Retained according to the analytics provider’s default retention period</li>
+      </ul>
+      <p>You may request deletion at any time via email.</p>
+    </section>
+
+    <section id="section-7">
+      <h2>7. You have the following rights under GDPR</h2>
+      <p>You have the following right under GDPR:</p>
+      <ul>
+        <li>Right to access – You have the right to request a copy of the personal data held by an organisation</li>
+        <li>Right to rectify – If personal data is inaccurate or incomplete, you can request correction or completion</li>
+        <li>Right to erasure – You may request deletion of your personal data in certain circumstances, such as when it is no longer necessary or processing is unlawful</li>
+        <li>Right to restrict processing – You can request that processing of your personal data is limited</li>
+        <li>Right to object – You may object to processing of personal data in certain situations</li>
+      </ul>
+    </section>
+
+    <section id="section-8">
+      <h2>8. Cookies information</h2>
+      <p>If we use analytical tools that rely on cookies, they will be noted below. 
+        If we use a cookie-free analytics provider, such as Microsoft Clarity, no cookie notice is required to be provided</p>
+    </section>
+
+    <section id="section-9">
+      <h2>Contact Us</h2>
+      <p>If you have any questions about this privacy policy, or how your data is handled, you can contact us using the submission box, linked <a href="../Website_logic.html#get-in-touch">here</a></p>
+    </section>
+  </div>
+</main>
+
+<!-- =================== FOOTER =================== -->
+<footer class="site-footer" id="contact">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <ul>
+        <li><a href="Legal/Privacy.html">Privacy Policy</a></li>
+        <li><a href="Legal/Terms_of_use.html">Terms of use</a></li>
+        <li><a href="Legal/Tas_of_sale.html">Terms and conditions of sale</a></li>
+
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Our Products</a></li>
+        <li><a href="#growers">Our Growers</a></li>
+        <li><a href="#story">Our Story</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Links</h4>
+      <ul>
+        <li><a href="https://www.achfarming.co.uk/" target="_blank" rel="noopener">ACH Farming</a></li>
+        <li><a href="https://www.freshproducepartners.com/" target="_blank" rel="noopener">Frutas Andinas</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="../Website_logic.html#get-in-touch">admin@achimports.co.uk</a></li>
+        <li><a href="tel:+441622234644">+44 1622 234644</a></li>
+        <li>___________________________________</li>
+        <li>Penelope House, Westerhill Road</li>
+        <li>Coxheath, Maidstone, Kent</li>
+        <li>ME17 4DH, England</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="year"></span> ACH Imports Ltd. Company Number: 13608827. All rights reserved.</span>
+    <span>Created by Fruvolution Ltd. For website inqueries contact George@fruvolution.co.uk</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
