@@ -260,6 +260,26 @@
     color:#fff;
     text-align:center;
   }
+
+  .hero-viewport{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.hero-track{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease;
+}
+.hero-slide{
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
   .hero-carousel {
   position: absolute;
   inset: 0;
