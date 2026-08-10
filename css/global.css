@@ -585,6 +585,33 @@
     .map-dot-pulse{ animation: none; }
   }
 
+  .values-list{
+  list-style: none;
+  counter-reset: values;
+  padding: 0;
+  margin: 0;
+}
+.values-list li{
+  position: relative;
+  counter-increment: values;
+  padding-left: 34px;
+  margin-bottom: 18px;
+  color: var(--color-ink-soft);
+}
+.values-list li::before{
+  content: counter(values);
+  position: absolute;
+  left: 0; top: 1px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-olive);
+  font-size: 1.05rem;
+}
+.values-list li strong{
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
   .story-split{
     display:grid;
     grid-template-columns: 1.1fr 1fr;
