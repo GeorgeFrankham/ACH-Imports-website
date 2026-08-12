@@ -100,6 +100,36 @@
   }
   .btn--ghost:hover{ background: rgba(255,255,255,0.14); }
 
+  .lang-switch{
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 200;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  background: var(--color-bg);
+  color: var(--color-purple);
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 16px rgba(36,23,38,0.18);
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.lang-switch:hover{
+  background: var(--color-purple);
+  color: #fff;
+  transform: translateY(-1px);
+}
+@media (max-width: 560px){
+  .lang-switch{ top: 12px; left: 12px; padding: 6px 12px; font-size: 0.72rem; }
+}
+
   /* ===========================================================
      2. HEADER / NAV
   =========================================================== */
