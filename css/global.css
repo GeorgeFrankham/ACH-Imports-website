@@ -838,6 +838,89 @@
     color: rgba(255,255,255,0.6);
   }
 
+  .values-wheel-wrap{
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.values-wheel{
+  --wheel-radius: 130px;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+.wheel-hub{
+  position: absolute;
+  inset: 32%;
+  border-radius: 50%;
+  background: var(--color-purple);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  box-shadow: var(--shadow-soft);
+}
+.wheel-spoke{
+  position: absolute;
+  top: 50%; left: 50%;
+  width: var(--wheel-radius);
+  height: 1px;
+  background: var(--color-line);
+  transform-origin: 0 0;
+  transform: rotate(calc(var(--i) * 72deg));
+}
+.wheel-node{
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 54px; height: 54px;
+  margin: -27px 0 0 -27px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--color-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-purple);
+  transform: rotate(calc(var(--i) * 72deg)) translate(var(--wheel-radius)) rotate(calc(var(--i) * -72deg));
+  transition: background .25s ease, border-color .25s ease, color .25s ease, box-shadow .25s ease;
+}
+.wheel-node svg{ width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.6; }
+.wheel-node:hover,
+.wheel-node:focus-visible{ border-color: var(--color-olive); }
+.wheel-node.is-active{
+  background: var(--color-olive);
+  border-color: var(--color-olive);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(36,23,38,0.22);
+}
+.wheel-detail{
+  background: var(--color-cream-card);
+  border-radius: var(--radius-soft);
+  padding: 36px 40px;
+  min-height: 180px;
+}
+.wheel-detail .eyebrow{ color: var(--color-olive-dark); }
+.wheel-detail h3{ font-size: 1.7rem; color: var(--color-purple); margin: 8px 0 12px; }
+.wheel-detail p{ color: var(--color-ink-soft); }
+
+@media (max-width: 900px){
+  .values-wheel-wrap{ grid-template-columns: 1fr; justify-items: center; }
+}
+@media (max-width: 560px){
+  .values-wheel{ --wheel-radius: 100px; width: 240px; height: 240px; }
+  .wheel-node{ width: 46px; height: 46px; margin: -23px 0 0 -23px; }
+}
+
   /* ===========================================================
      7. RESPONSIVE
   =========================================================== */

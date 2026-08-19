@@ -113,7 +113,9 @@ setInterval(autoHeroScroll, 5000); // every 5 seconds
     { country: 'Bulgaria',       lat: 42.7,  lng: 25.3,   fruit: 'Cherries, Plums' },
     { country: 'Moldova',        lat: 47.2,  lng: 28.5,   fruit: 'Cherries, Plums, Apricots' },
     { country: 'South Africa',   lat: -29.0, lng: 24.0,   fruit: 'Cherries, Plums, Nectarines, Peaches, Flat Nectarines, Flat  Peaches, Figs' },
-    { country: 'Serbia',         lat: 44.8, lng: 19.5,   fruit: 'Plums' }
+    { country: 'Serbia',         lat: 44.8, lng: 19.5,   fruit: 'Plums' },
+    { country: 'Jordan',         lat: 30.0, lng:36.6,    fruit: 'Dates' },
+    { country: 'Türkiye',        lat: 39.0, lng:34.0,    fruit: 'Cherries, Figs'}
   ];
 
   (async function initMap(){
@@ -227,6 +229,25 @@ document.getElementById('cookieAccept').addEventListener('click', () => {
   localStorage.setItem('cookieConsent', 'accepted');
   loadClarity();
   cookieBanner.hidden = true;
+});
+
+const wheelNodes    = document.querySelectorAll('.wheel-node');
+const wheelDetailNum   = document.getElementById('wheelDetailNum');
+const wheelDetailTitle = document.getElementById('wheelDetailTitle');
+const wheelDetailText  = document.getElementById('wheelDetailText');
+
+function setActiveWheelNode(node){
+  wheelNodes.forEach(n => n.classList.remove('is-active'));
+  node.classList.add('is-active');
+  wheelDetailNum.textContent   = node.dataset.num;
+  wheelDetailTitle.textContent = node.dataset.title;
+  wheelDetailText.textContent  = node.dataset.desc;
+}
+
+wheelNodes.forEach(node => {
+  node.addEventListener('mouseenter', () => setActiveWheelNode(node));
+  node.addEventListener('focus', () => setActiveWheelNode(node));
+  node.addEventListener('click', () => setActiveWheelNode(node));
 });
 
 document.getElementById('cookieDecline').addEventListener('click', () => {
