@@ -130,6 +130,38 @@
   .lang-switch{ top: 12px; left: 12px; padding: 6px 12px; font-size: 0.72rem; }
 }
 
+.cookie-banner{
+  position: fixed;
+  left: 16px; right: 16px; bottom: 16px;
+  z-index: 300;
+  max-width: 520px;
+  margin: 0 auto;
+  background: var(--color-purple-dark);
+  color: #fff;
+  border-radius: 12px;
+  padding: 18px 22px;
+  box-shadow: 0 14px 32px rgba(36,23,38,0.3);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.85rem;
+}
+.cookie-banner[hidden]{ display: none; }
+.cookie-banner p{ margin: 0; flex: 1 1 240px; color: rgba(255,255,255,0.88); }
+.cookie-banner a{ color: #fff; text-decoration: underline; }
+.cookie-banner-actions{ display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-btn{
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cookie-btn--solid{ background: var(--color-olive); color: #fff; }
+.cookie-btn--ghost{ background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); }
+
   /* ===========================================================
      2. HEADER / NAV
   =========================================================== */

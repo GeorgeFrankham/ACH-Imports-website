@@ -206,6 +206,34 @@ setInterval(autoHeroScroll, 5000); // every 5 seconds
       openPopup(group, d);
     });
 
+    function loadClarity(){
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "xxjc0mc9ol");
+}
+
+const cookieBanner  = document.getElementById('cookieBanner');
+const cookieConsent = localStorage.getItem('cookieConsent');
+
+if (cookieConsent === 'accepted') {
+  loadClarity();
+} else if (cookieConsent !== 'declined') {
+  cookieBanner.hidden = false;
+}
+
+document.getElementById('cookieAccept').addEventListener('click', () => {
+  localStorage.setItem('cookieConsent', 'accepted');
+  loadClarity();
+  cookieBanner.hidden = true;
+});
+
+document.getElementById('cookieDecline').addEventListener('click', () => {
+  localStorage.setItem('cookieConsent', 'declined');
+  cookieBanner.hidden = true;
+});
+
     popupClose.addEventListener('click', closePopup);
     document.addEventListener('click', (e) => {
       if (!popup.hidden && !popup.contains(e.target) && !e.target.closest('.map-dot-group')) closePopup();
