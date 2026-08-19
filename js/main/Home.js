@@ -101,18 +101,18 @@ setInterval(autoHeroScroll, 5000); // every 5 seconds
   // Sourcing map
   // ------------------------------------------------------------
   const SOURCING_POINTS = [
-    { country: 'Canada',         lat: 56.1,  lng: -106.3, fruit: 'Cherries' },
-    { country: 'USA',            lat: 39.8,  lng: -98.6,  fruit: 'Cherries' },
-    { country: 'Argentina',      lat: -34.0, lng: -64.0,  fruit: 'Cherries' },
-    { country: 'Chile',          lat: -35.6, lng: -71.5,  fruit: 'Cherries, Plums, Peaches,  Flat peaches, Nectarines, Flat nectarines' },
+    { country: 'Canada',         lat: 56.1,  lng: -126.3, fruit: 'Cherries' },
+    { country: 'USA',            lat: 43.8,  lng: -120.6,  fruit: 'Cherries' },
+    { country: 'Argentina',      lat: -42.0, lng: -66.0,  fruit: 'Cherries' },
+    { country: 'Chile',          lat: -35.6, lng: -71.5,  fruit: 'Cherries, Plums, Peaches,  Flat Peaches, Nectarines, Flat Nectarines, Kiwi' },
     { country: 'United Kingdom', lat: 54.0,  lng: -2.5,   fruit: 'Cherries, Plums, Apricots' },
-    { country: 'Spain',          lat: 40.9,  lng: 1,   fruit: 'Cherries, Plums' },
-    { country: 'Portugal',       lat: 39.5,  lng: -8.0,   fruit: 'Plums, Nectarines, Peaches, Flat peaches, Flat Nectarines' },
-    { country: 'Italy',          lat: 42.5,  lng: 12.5,   fruit: 'Plums' },
-    { country: 'Greece',         lat: 38.0,  lng: 22.0,   fruit: 'Cherries, Nectarines, Peaches' },
-    { country: 'Bulgaria',       lat: 42.7,  lng: 25.3,   fruit: 'Cherries, Plums, Peaches, Nectarines, Apricots' },
-    { country: 'Moldova',        lat: 47.2,  lng: 28.5,   fruit: 'Cherries, Plums' },
-    { country: 'South Africa',   lat: -29.0, lng: 24.0,   fruit: 'Cherries, Plums, Nectarines, Peaches' },
+    { country: 'Spain',          lat: 40.9,  lng: 1,   fruit: 'Cherries, Plums, Peaches, Nectarines, Flat Nectarines, Flat Peaches, Figs' },
+    { country: 'Portugal',       lat: 39.5,  lng: -8.0,   fruit: 'Plums, Nectarines, Peaches, Kiwi' },
+    { country: 'Italy',          lat: 42.5,  lng: 12.5,   fruit: 'Plums, Kiwi' },
+    { country: 'Greece',         lat: 38.0,  lng: 22.0,   fruit: 'Cherries, Nectarines, Peaches, Kiwi' },
+    { country: 'Bulgaria',       lat: 42.7,  lng: 25.3,   fruit: 'Cherries, Plums' },
+    { country: 'Moldova',        lat: 47.2,  lng: 28.5,   fruit: 'Cherries, Plums, Apricots' },
+    { country: 'South Africa',   lat: -29.0, lng: 24.0,   fruit: 'Cherries, Plums, Nectarines, Peaches, Flat Nectarines, Flat  Peaches, Figs' },
     { country: 'Serbia',         lat: 44.8, lng: 19.5,   fruit: 'Plums' }
   ];
 

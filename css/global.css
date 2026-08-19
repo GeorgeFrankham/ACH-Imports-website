@@ -13,7 +13,7 @@
     --shadow-soft:          0 20px 50px rgba(36,23,38,0.16);
 
     /* --- type --- */
-    --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    --font-display:  sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
 
@@ -60,7 +60,6 @@
   h1,h2,h3{
     font-family: var(--font-display);
     font-weight: 700;
-    text-transform: uppercase;
     letter-spacing: 0.02em;
     margin: 0;
     color: var(--color-ink);
@@ -201,9 +200,9 @@
   .nav-links a{
     font-family: var(--font-body);
     font-weight: 600;
-    font-size: 0.82rem;
+    font-size: 1rem;
     letter-spacing: 0.06em;
-    text-transform: uppercase;
+    
     color: #fff;
     transition: color .25s ease;
     padding: 6px 0;
@@ -377,7 +376,7 @@
     max-width: 900px;
   }
   .hero-logo{
-    height: 72px;
+    height: 120px;
     width:auto;
     margin-bottom: 6px;
     filter: drop-shadow(0 4px 18px rgba(0,0,0,0.35));
