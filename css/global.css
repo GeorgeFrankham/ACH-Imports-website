@@ -13,7 +13,7 @@
     --shadow-soft:          0 20px 50px rgba(36,23,38,0.16);
 
     /* --- type --- */
-    --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    --font-display:  sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
 
@@ -60,7 +60,6 @@
   h1,h2,h3{
     font-family: var(--font-display);
     font-weight: 700;
-    text-transform: uppercase;
     letter-spacing: 0.02em;
     margin: 0;
     color: var(--color-ink);
@@ -130,6 +129,38 @@
   .lang-switch{ top: 12px; left: 12px; padding: 6px 12px; font-size: 0.72rem; }
 }
 
+.cookie-banner{
+  position: fixed;
+  left: 16px; right: 16px; bottom: 16px;
+  z-index: 300;
+  max-width: 520px;
+  margin: 0 auto;
+  background: var(--color-purple-dark);
+  color: #fff;
+  border-radius: 12px;
+  padding: 18px 22px;
+  box-shadow: 0 14px 32px rgba(36,23,38,0.3);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.85rem;
+}
+.cookie-banner[hidden]{ display: none; }
+.cookie-banner p{ margin: 0; flex: 1 1 240px; color: rgba(255,255,255,0.88); }
+.cookie-banner a{ color: #fff; text-decoration: underline; }
+.cookie-banner-actions{ display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-btn{
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cookie-btn--solid{ background: var(--color-olive); color: #fff; }
+.cookie-btn--ghost{ background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); }
+
   /* ===========================================================
      2. HEADER / NAV
   =========================================================== */
@@ -169,9 +200,9 @@
   .nav-links a{
     font-family: var(--font-body);
     font-weight: 600;
-    font-size: 0.82rem;
+    font-size: 1rem;
     letter-spacing: 0.06em;
-    text-transform: uppercase;
+    
     color: #fff;
     transition: color .25s ease;
     padding: 6px 0;
@@ -345,7 +376,7 @@
     max-width: 900px;
   }
   .hero-logo{
-    height: 72px;
+    height: 120px;
     width:auto;
     margin-bottom: 6px;
     filter: drop-shadow(0 4px 18px rgba(0,0,0,0.35));
@@ -806,6 +837,89 @@
     font-size: 0.8rem;
     color: rgba(255,255,255,0.6);
   }
+
+  .values-wheel-wrap{
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.values-wheel{
+  --wheel-radius: 130px;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+.wheel-hub{
+  position: absolute;
+  inset: 32%;
+  border-radius: 50%;
+  background: var(--color-purple);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  box-shadow: var(--shadow-soft);
+}
+.wheel-spoke{
+  position: absolute;
+  top: 50%; left: 50%;
+  width: var(--wheel-radius);
+  height: 1px;
+  background: var(--color-line);
+  transform-origin: 0 0;
+  transform: rotate(calc(var(--i) * 72deg));
+}
+.wheel-node{
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 54px; height: 54px;
+  margin: -27px 0 0 -27px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--color-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-purple);
+  transform: rotate(calc(var(--i) * 72deg)) translate(var(--wheel-radius)) rotate(calc(var(--i) * -72deg));
+  transition: background .25s ease, border-color .25s ease, color .25s ease, box-shadow .25s ease;
+}
+.wheel-node svg{ width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.6; }
+.wheel-node:hover,
+.wheel-node:focus-visible{ border-color: var(--color-olive); }
+.wheel-node.is-active{
+  background: var(--color-olive);
+  border-color: var(--color-olive);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(36,23,38,0.22);
+}
+.wheel-detail{
+  background: var(--color-cream-card);
+  border-radius: var(--radius-soft);
+  padding: 36px 40px;
+  min-height: 180px;
+}
+.wheel-detail .eyebrow{ color: var(--color-olive-dark); }
+.wheel-detail h3{ font-size: 1.7rem; color: var(--color-purple); margin: 8px 0 12px; }
+.wheel-detail p{ color: var(--color-ink-soft); }
+
+@media (max-width: 900px){
+  .values-wheel-wrap{ grid-template-columns: 1fr; justify-items: center; }
+}
+@media (max-width: 560px){
+  .values-wheel{ --wheel-radius: 100px; width: 240px; height: 240px; }
+  .wheel-node{ width: 46px; height: 46px; margin: -23px 0 0 -23px; }
+}
 
   /* ===========================================================
      7. RESPONSIVE
