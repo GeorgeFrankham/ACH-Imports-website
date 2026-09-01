@@ -236,12 +236,14 @@ const wheelDetailNum   = document.getElementById('wheelDetailNum');
 const wheelDetailTitle = document.getElementById('wheelDetailTitle');
 const wheelDetailText  = document.getElementById('wheelDetailText');
 
+
 function setActiveWheelNode(node){
   wheelNodes.forEach(n => n.classList.remove('is-active'));
   node.classList.add('is-active');
   wheelDetailNum.textContent   = node.dataset.num;
   wheelDetailTitle.textContent = node.dataset.title;
   wheelDetailText.textContent  = node.dataset.desc;
+  wheelDetailTitle.style.color = getComputedStyle(node).getPropertyValue('--accent').trim();
 }
 
 wheelNodes.forEach(node => {
