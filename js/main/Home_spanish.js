@@ -95,21 +95,21 @@ window.addEventListener('resize', () => {
   // Sourcing map
   // ------------------------------------------------------------
   const SOURCING_POINTS = [
-    { country: 'Canada',         lat: 56.1,  lng: -126.3, fruit: 'Cherries' },
-    { country: 'USA',            lat: 43.8,  lng: -120.6,  fruit: 'Cherries' },
-    { country: 'Argentina',      lat: -42.0, lng: -66.0,  fruit: 'Cherries' },
-    { country: 'Chile',          lat: -35.6, lng: -71.5,  fruit: 'Cherries, Plums, Peaches,  Flat Peaches, Nectarines, Flat Nectarines, Kiwi' },
-    { country: 'United Kingdom', lat: 54.0,  lng: -2.5,   fruit: 'Cherries, Plums, Apricots' },
-    { country: 'Spain',          lat: 40.9,  lng: 1,   fruit: 'Cherries, Plums, Peaches, Nectarines, Flat Nectarines, Flat Peaches, Figs' },
-    { country: 'Portugal',       lat: 39.5,  lng: -8.0,   fruit: 'Plums, Nectarines, Peaches, Kiwi' },
-    { country: 'Italy',          lat: 42.5,  lng: 12.5,   fruit: 'Plums, Kiwi' },
-    { country: 'Greece',         lat: 38.0,  lng: 22.0,   fruit: 'Cherries, Nectarines, Peaches, Kiwi' },
-    { country: 'Bulgaria',       lat: 42.7,  lng: 25.3,   fruit: 'Cherries, Plums' },
-    { country: 'Moldova',        lat: 47.2,  lng: 28.5,   fruit: 'Cherries, Plums, Apricots' },
-    { country: 'South Africa',   lat: -29.0, lng: 24.0,   fruit: 'Cherries, Plums, Nectarines, Peaches, Flat Nectarines, Flat  Peaches, Figs' },
-    { country: 'Serbia',         lat: 44.8, lng: 19.5,   fruit: 'Plums' },
-    { country: 'Jordan',         lat: 30.0, lng:36.6,    fruit: 'Dates' },
-    { country: 'Türkiye',        lat: 39.0, lng:34.0,    fruit: 'Cherries, Figs'}
+    { country: 'Canadá',         lat: 56.1,  lng: -126.3, fruit: 'Cerezas' },
+    { country: 'USA',            lat: 43.8,  lng: -120.6,  fruit: 'Cerezas' },
+    { country: 'Argentina',      lat: -42.0, lng: -66.0,  fruit: 'Cerezas' },
+    { country: 'Chile',          lat: -35.6, lng: -71.5,  fruit: 'Cerezas, Ciruelas, Melocotones, Melocotones planos, Nectarinas, Nectarinas planas, Kiwi' },
+    { country: 'UK',             lat: 54.0,  lng: -2.5,   fruit: 'Cerezas, Ciruelas, Albaricoques' },
+    { country: 'España',          lat: 40.9,  lng: 1,   fruit: 'Cerezas, Ciruelas, Melocotones, Nectarinas, Nectarinas Planas, Melocotones Planos, Higos' },
+    { country: 'Portugal',       lat: 39.5,  lng: -8.0,   fruit: 'Ciruelas, Nectarinas, Melocotones, Kiwi' },
+    { country: 'Italia',          lat: 42.5,  lng: 12.5,   fruit: 'Ciruelas, Kiwi' },
+    { country: 'Greecia',         lat: 38.0,  lng: 22.0,   fruit: 'Cerezas, Nectarinas, Melocotones, Kiwi' },
+    { country: 'Bulgaria',       lat: 42.7,  lng: 25.3,   fruit: 'Cerezas,Ciruelas' },
+    { country: 'Moldovia',        lat: 47.2,  lng: 28.5,   fruit: 'Cerezas, Ciruelas, Albaricoques' },
+    { country: 'Sudáfrica',   lat: -29.0, lng: 24.0,   fruit: 'Cerezas, Ciruelas, Nectarinas, Melocotones, Nectarinas Planas, Melocotones Planos, Higos' },
+    { country: 'Serbia',         lat: 44.8, lng: 19.5,   fruit: 'Ciruelas' },
+    { country: 'Jordán',         lat: 30.0, lng:36.6,    fruit: 'Dátiles' },
+    { country: 'Turquía',        lat: 39.0, lng:34.0,    fruit: 'Cerezas,higos'}
   ];
 
   (async function initMap(){
@@ -247,35 +247,35 @@ document.getElementById('cookieDecline').addEventListener('click', () => {
 
   const VALUES = [
     {
-      num: '01', title: 'Energy and Commitment', label: ['Commitment', 'Energy and'], color: 'var(--fruit-cherry)',
+      num: '01', title: 'Energía y compromiso', label: ['Compromiso', 'Energía y'], color: 'var(--fruit-cherry)',
       points: [
-        'Passionate about our business and products',
-        'Strive to get it right, first time',
-        'Be resourceful and flexible – finding a fresh way'
+        'Apasionados por nuestro negocio y productos',
+        'Esfuérzate por acertar a la primera',
+        'Sé ingenioso y flexible – encontrando una forma nueva'
       ]
     },
     {
-      num: '02', title: 'Honesty and Respect', label: ['Respect', 'Honesty and'], color: 'var(--fruit-kiwi)',
+      num: '02', title: 'Honestidad y respeto', label: ['Respeto', 'Honestidad y'], color: 'var(--fruit-kiwi)',
       points: [
-        'Achieve success by raising our standards',
-        'Our growth comes from being better, together',
-        'Treat people as we expected to be treated ourselves'
+        'Consigue éxito subiendo nuestros estándares',
+        'Nuestro crecimiento viene de ser mejores juntos',
+        'Trata a la gente como esperas que te traten a ti'
       ]
     },
     {
-      num: '03', title: 'Connected Through Collaboration', label: ['Collaboration', 'Connected Through'], color: 'var(--fruit-nectarine)',
+      num: '03', title: 'Conectados mediante la colaboración', label: ['Colaboración', 'Conectados por'], color: 'var(--fruit-nectarine)',
       points: [
-        'Build fruitful relationships in our team, with our growers, and with our customers',
-        'Keep it simple, to deliver an efficient, customer-focussed supply chain from field to shelf',
-        'We put relationships at the heart of our work; we listen and work together to make things happen'
+        'Construye relaciones fructíferas con nuestro equipo, con nuestros cultivadores y con nuestros clientes',
+        'Mantenlo simple para ofrecer una cadena de suministro eficiente y centrada en el cliente desde el campo hasta el estante',
+        'Ponemos las relaciones en el centro de nuestro trabajo; escuchamos y trabajamos juntos para lograr que las cosas pasen'
       ]
     },
     {
-      num: '04', title: 'Nurturing Our Future', label: ['Future', 'Nurturing Our'], color: 'var(--fruit-apricot)',
+      num: '04', title: 'Nutriendo nuestro futuro', label: ['Future', 'Cuidando nuestro'], color: 'var(--fruit-apricot)',
       points: [
-        'Build a happy team to develop our talent',
-        'Grow a healthy business; continually adding value',
-        'Work with like-minded partners to protect our natural resources and environment'
+        'Crea un equipo feliz para desarrollar nuestro talento',
+        'Haz crecer un negocio saludable; siempre añadiendo valor',
+        'Trabaja con compañeros que piensen igual para proteger nuestros recursos naturales y el medio ambiente'
       ]
     }
   ];
