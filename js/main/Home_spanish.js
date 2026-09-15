@@ -66,7 +66,7 @@ window.addEventListener('resize', () => {
       const status       = document.getElementById('contactFormStatus');
       const submitButton = contactForm.querySelector('button[type="submit"]');
 
-      status.textContent = 'Sending…';
+      status.textContent = 'Enviando…';
       status.classList.add('is-visible');
       submitButton.disabled = true;
 
@@ -78,13 +78,13 @@ window.addEventListener('resize', () => {
         });
 
         if (response.ok) {
-          status.textContent = "Thanks — we'll be in touch shortly.";
+          status.textContent = "Gracias, nos pondremos en contacto pronto.";
           contactForm.reset();
         } else {
-          status.textContent = 'Something went wrong — please try again, or email us directly.';
+          status.textContent = 'Algo salió mal — por favor intenta de nuevo, o envíanos un correo directamente.';
         }
       } catch (err) {
-        status.textContent = 'Something went wrong — please try again, or email us directly.';
+        status.textContent = 'Algo salió mal — por favor intenta de nuevo, o envíanos un correo directamente.';
       } finally {
         submitButton.disabled = false;
       }
@@ -255,7 +255,7 @@ document.getElementById('cookieDecline').addEventListener('click', () => {
       ]
     },
     {
-      num: '02', title: 'Honestidad y respeto', label: ['Respeto', 'Honestidad y'], color: 'var(--fruit-kiwi)',
+      num: '02', title: 'Honestidad y respeto', label: [ 'Respeto', 'Honestidad y'], color: 'var(--fruit-kiwi)',
       points: [
         'Consigue éxito subiendo nuestros estándares',
         'Nuestro crecimiento viene de ser mejores juntos',
